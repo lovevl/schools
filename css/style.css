@@ -154,6 +154,17 @@
     border: 1px solid #f00;
 }
 
+.teacher-box{
+    max-width: 633px;
+    margin:10px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+
 .re-box{
     margin-top: 10px;
 }
