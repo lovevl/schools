@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>老师注册</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            background: url("img/login_bg.jpg") 50% 0 no-repeat fixed;
+        }
+        .navbar{
+            border-radius: 0;
+        }
+        .row-box{
+
+
+        }
+
+        .teacher-box{
+            max-width: 633px;
+            margin:10px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        .btn-padding{
+            transform: translateX(-8px);
+        }
+
+        .form-width .col-sm-2{
+            width: 20%;
+        }
+        .form-width .col-sm-8{
+            width: 60%;
+        }
+        .form-width .col-sm-10{
+            width: 80%;
+        }
+        .form-width .col-sm-offset-2{
+            margin-left: 20%;
+        }
+        @media (max-width: 768px) {
+            .btn-padding{
+                transform: translate3d(0,8px,0);
+            }
+            .form-width .col-sm-2{
+                width: 100%;
+            }
+            .form-width .col-sm-8{
+                width: 100%;
+            }
+            .form-width .col-sm-10{
+                width: 100%;
+            }
+            .form-width .col-sm-offset-2 {
+                margin-left: 0;
+            }
+        }
+
+
+
+        .area-box{
+            margin-bottom: 15px;
+        }
+
+        .sub{
+            margin-top: 15px;
+        }
+
+        nav{
+            font-family: "Vipp Neue", Arial, Helvetica, sans-serif;
+            color: #282828 !important;
+            font-size: 14px;
+            line-height: 30px;
+            /*text-transform: uppercase;*/
+            font-weight: 600;
+        }
+        nav ul.nav a{
+            color: #282828 !important;
+        }
+        .form-group>div label{
+            font-size:12px;
+            color:#a94442;
+            font-weight:normal;
+        }
+        .form-group>div label.agreethis{
+            font-size:12px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #34495e;
+        }
+        .form-inline .form-group{
+            display: inline-block;
+            margin-bottom: 15px;
+            vertical-align: middle;
+        }
+        .form-inline .form-control{
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+        .form-inline .form-control.w-225{
+            width: 225px;
+        }
+        .form-inline .form-control.select-w-80{
+            width: 80px;
+        }
+
+        .margin-right-15{
+            margin-right: 15px;
+        }
+
+        div.form-inline .noschl,div.form-inline .noteacher{
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+        .body_message.wrong{
+            color: #a94442;
+            background-color: #f2dede;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--<div class='body_message text-center wrong'><span>该班级的语文老师已被注册！</span></div>-->
+<nav class="navbar navbar-default">
+    <div class="container-fluid ">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span style="color: #98c93c">Sch</span><span style="color:#3ec1ce ">ool</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">教师登陆</a></li>
+                <li><a href="#">学生登陆</a></li>
+
+                <!--<li class="dropdown">-->
+                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid ">
+    <div class="row ">
+        <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 row-box">
+            <div class="teacher-box">
+                <h5 class="title ">· 注册老师信息</h5>
+                <hr>
+                <form class="" id="teacherFormId" method="post" onsubmit="return submitForm(this);">
+                <div class="row area-box">
+                    <div class="col-md-4 col-sm-4">
+                        <label  class="control-label">省份：</label>
+                        <select class="form-control" name="province" id="province_id">
+                            <option value="0">请选择</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <label  class="control-label"> 城市：</label>
+                        <select class="form-control" name="city" id="city_id">
+                            <option value="0">请选择</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <label  class="control-label">县／区：</label>
+                        <select class="form-control" name="area" id="area_id">
+                            <option value="0">请选择</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="form-group margin-right-15">
+                        <label  class="">学校：</label>
+                        <select class="form-control w-225 " name="schoolId" id="school_id" >
+
+                        </select>
+                    </div>
+                    <div class="form-group noschl">
+                        没有你的学校？
+                        <a  data-toggle="modal" href="#school_modal">
+                            点这里添加
+                        </a>
+                    </div>
+
+                </div>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label >岗位：</label>
+                        <select class="form-control select-w-80" name="schlAdmin" >
+                            <option value="false">教师</option>
+                            <option value="true">行政</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="form-group margin-right-15">
+                        <label for="grade_id" class="">年级：</label>
+                        <select class="form-control select-w-80" name="grade" id="grade_id">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+                    <div class="form-group margin-right-15">
+                        <label for="classs_id" class="">班级：</label>
+                        <select class="form-control select-w-80" name="classs" id="classs_id">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label  class="">任课：</label>
+                        <select class="form-control select-w-80" name="type" id="type_id">
+                            <option value="1">英语</option>
+                            <option value="2">语文</option>
+                            <option value="3">数学</option>
+                            <option value="4">生物</option>
+                        </select>
+                    </div>
+                    <div class="form-group noteacher">
+                        已被注册？
+                        <a href="${base}/teacher/changeT.jspx?id=">
+                            点这里变更
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-horizontal form-width">
+                    <div class="form-group">
+                        <label for="name_id" class="col-sm-2 control-label">名字：</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="name_id" name="name" class="form-control ">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone_id" class="col-sm-2 control-label">手机：</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="phone_id" name="phone" class="form-control ">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="yanzheng_id" class="col-sm-2 control-label">验证码：</label>
+                        <div class="col-sm-8 ">
+                            <input type="text" name="phoneCode" id="yanzheng_id" class="form-control">
+                        </div>
+                        <div class="col-sm-2  btn-padding">
+                            <button type="button" class="btn btn-success " onclick="sendCode(this);">发送验证码</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="pwd_id" class="col-sm-2 control-label">密码：</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="pwd" id="pwd_id" class="form-control ">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-pwd_id" class="col-sm-2 control-label">确认密码：</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="confirm-pwd_id" class="form-control confirmPwd">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="checkbox" id="agreeLawId"> <label class="agreethis" for="agreeLawId">同意我们的站内条款与服务</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center sub"><button type="submit" class="btn btn-info">提交</button></div>
+            </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="school_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">填写学校信息</h4>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="row area-box">
+                        <div class="col-md-4 col-sm-4">
+                            <label  class="control-label">省份：</label>
+                            <select class="form-control" name="province" id="province_idm">
+                                <option value="0">请选择</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <label  class="control-label"> 城市：</label>
+                            <select class="form-control" name="city" id="city_idm">
+                                <option value="0">请选择</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <label  class="control-label">县／区：</label>
+                        <select class="form-control" name="area" id="area_idm">
+                            <option value="0">请选择</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="school_num">学校编码：</label>
+                            <input type="text" id="school_num" class="form-control" placeholder="可选">
+                        </div>
+                        <div class="form-group">
+                            <label >年级分布：</label>
+                            <input type="checkbox" name="type" value="xx" id="xiaoxue"><label for="xiaoxue">小学</label>
+                            <input type="checkbox" name="type" value="cz" id="chuzh"><label for="chuzh">初中</label>
+                            <input type="checkbox" name="type" value="gz" id="gaozh"><label for="gaozh">高中</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="school_name">学校名称：</label>
+                            <input type="text" name="name" class="form-control" id="school_name" >
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<footer class="l-footer">
+    <p class="text-center sm-text">
+        <small>xm.mrh🍓提供技术支持</small>
+    </p>
+</footer>
+<script src="js/jquery-2.1.4.min.js" ></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+    $.trim()
+</script>
+</body>
+</html>

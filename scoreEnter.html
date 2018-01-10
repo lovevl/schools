@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学生成绩录入</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/footable/css/footable.core.css?v=2-0-1">
+    <link rel="stylesheet" href="js/footable/css/footable.standalone.css">
+    <link rel="stylesheet" href="js/footable/css/footable-demos.css">
+    <!--<link rel="stylesheet" href="js/footable/css/DT_bootstrap.css">-->
+    <!--<link rel="stylesheet" href="js/footable/css/datatables.responsive.css">-->
+    <!--<script src="js/modernizr.custom.js"></script>-->
+    <style>
+        /*body {*/
+            /*background: url("img/login_bg.jpg") 50% 0 no-repeat fixed;*/
+        /*}*/
+        .student-msg p {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #34495e;
+            font-weight: 300;
+            /*text-indent: 1em;*/
+        }
+        /*.sch-class{*/
+            /*margin: 5px 0;*/
+        /*}*/
+        .sch-class span {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #34495e;
+            padding: 0 5px;
+        }
+        .sch-class span label{
+            font-weight: normal;
+        }
+
+        table.table{
+            width: 65%;
+            counter-reset: figures;
+        }
+
+        .table tbody tr td.disabled{
+            background-color: #f7f7f7;
+        }
+        .table tbody tr td.disabled input{
+            color: #787878;
+            background-color: #f7f7f7;
+        }
+        tr input{
+            border: 0;
+            outline: none;
+            width: 100%;
+        }
+        .form-inline div.margin-10{
+            margin-bottom: 10px;
+        }
+        select.form-control{
+            height: 28px;
+        }
+
+        .form-control{
+            width: auto;
+            display: inline-block;
+        }
+
+        input[type=checkbox]{
+            border: 2px solid #d1d1d1;
+        }
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span style="color: #98c93c">Sch</span><span
+                    style="color:#3ec1ce ">ool</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="#">学生信息录入</a></li>
+                <li class="active"><a href="#">学生成绩录入</a></li>
+                <li><a href="#">学生成绩查看</a></li>
+                <li><a href="#">变更任课教师</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">个人中心 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid min-height">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 ">
+                <div class="login-form">
+                    <h5>· 学生成绩录入</h5>
+                    <!--<div class="student-msg"><p>&nbsp;&nbsp;该班级现有学生共40名</p></div>-->
+                    <hr>
+                    <!--<div class="pull-right">-->
+                        <!--<button type="button" class="btn btn-info btn-xs">添加一名学生</button>-->
+                    <!--</div>-->
+                    <!--<button id="addNewStu" type="button" class="btn btn-info btn-xs">加一个</button>-->
+                    <form class="form-inline" method="post" action="${base}/teacher/savestus.json">
+                        <div class="form-group margin-10">
+                           <select name="subject" id="" class="form-control">
+                               <option value="1">上学期</option>
+                               <option value="2">下学期</option>
+                           </select>
+                           <select name="subject" id="" class="form-control">
+                               <option value="0">年段统考</option>
+                               <option value="1">班级联考</option>
+                               <option value="2">班级自考</option>
+                           </select>
+
+
+                           <!--<select name="subject" id="" class="form-control">-->
+                               <!--<option value="0">期中考</option>-->
+                               <!--<option value="1">期末考</option>-->
+                           <!--</select>-->
+
+                        </div>
+                        <!--<div class="">-->
+                               <!--<span class="re-padding"><input id="cb1" name="cb6" type="checkbox">-->
+                                    <!--<label class="remember-label" for="cb1">1班</label></span>-->
+                               <!--<span class="re-padding"><input id="cb2" name="cb6" type="checkbox">-->
+                                    <!--<label class="remember-label" for="cb2">2班</label></span>-->
+                               <!--<span class="re-padding"><input id="cb3" name="cb6" type="checkbox">-->
+                                    <!--<label class="remember-label" for="cb3">3班</label></span>-->
+                               <!--<span class="re-padding"><input id="cb4" name="cb6" type="checkbox">-->
+                                    <!--<label class="remember-label" for="cb4">4班</label></span>-->
+                        <!--</div>-->
+                        <div class="sch-class margin-10">
+                            <label for="">打勾联考的班级：</label>
+                            <span><input type="checkbox" name="cb1" id="cb1"><label class="ab-class" for="cb1">1班</label></span>
+                            <span><input type="checkbox" name="cb1" id="cb2"><label class="ab-class" for="cb2">2班</label></span>
+                            <span><input type="checkbox" name="cb1" id="cb3"><label class="ab-class" for="cb3">3班</label></span>
+                        </div>
+                        <div class="form-group margin-10">
+                            <label for="" >科目：</label>
+                            <select name="subject" id="" class="form-control">
+                                <option value="1">英语</option>
+                                <option value="2">语文</option>
+                                <option value="3">数学</option>
+                            </select>
+                        </div>
+                        <table id="footable-res2" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-2 col-md-2">序号</th>
+                                    <th class="col-xs-2 col-md-2">学号</th>
+                                    <th class="col-xs-3 col-md-3">名字</th>
+                                    <th class="col-xs-2 col-md-2">英语</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td >1</td>
+                                    <td>02</td>
+                                    <td>黄日华</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td >1</td>
+                                    <td>02</td>
+                                    <td>黄日华</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+<footer class="l-footer">
+    <p class="text-center sm-text">
+        <small>xm.mrh🍓提供技术支持</small>
+    </p>
+</footer>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/base.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="js/svgcheckbx.js"></script>
+<!--<script src="js/footable/js/footable.js?v=2-0-1"></script>-->
+<!--<script src="js/footable/js/footable.sort.js?v=2-0-1"></script>-->
+<script type="text/javascript">
+    $('.min-height').css('min-height', client().height - 102 + "px");
+    $(function () {
+
+    });
+
+
+
+</script>
+</body>
+</html>

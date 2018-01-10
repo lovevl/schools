@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>教师登录</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/footable/css/footable.core.css?v=2-0-1">
+    <link rel="stylesheet" href="js/footable/css/footable.standalone.css">
+    <link rel="stylesheet" href="js/footable/css/footable-demos.css">
+    <!--<link rel="stylesheet" href="js/footable/css/DT_bootstrap.css">-->
+    <!--<link rel="stylesheet" href="js/footable/css/datatables.responsive.css">-->
+    <!--<script src="js/modernizr.custom.js"></script>-->
+    <style>
+        /*body {*/
+            /*background: url("img/login_bg.jpg") 50% 0 no-repeat fixed;*/
+        /*}*/
+        .student-msg p{
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #34495e;
+            font-weight: 300;
+            /*text-indent: 1em;*/
+        }
+        .login-form{
+            /*position: relative;*/
+        }
+        label.pwd-msg{
+            font-weight: normal;
+            font-size: 12px;
+            color: #a94442;
+        }
+        table.table{
+            width: 65%;
+            counter-reset: figures;
+        }
+        .table tbody{
+
+        }
+        .table tbody tr td:last-child{
+
+            border: 1px solid #fff;
+        }
+        .table tbody tr td:last-child button{
+            margin-right: 7px;
+        }
+        .table tbody tr td.disabled{
+            background-color: #f7f7f7;
+        }
+        .table tbody tr td.disabled input{
+            color: #787878;
+            background-color: #f7f7f7;
+        }
+        tr input{
+            border: 0;
+            outline: none;
+            width: 100%;
+        }
+        #addNewStu{
+            position: absolute;
+        }
+        figure figcaption{
+            counter-increment: figures;
+        }
+        figure figcaption:before {
+            content: counter(figures);
+        }
+        @media (max-width: 992px) {
+            table.table{
+                width: 70%;
+            }
+        }
+        @media (max-width: 768px) {
+            table.table{
+                width: 80%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span style="color: #98c93c">Sch</span><span
+                    style="color:#3ec1ce ">ool</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">学生信息录入</a></li>
+                <li><a href="#">学生成绩录入</a></li>
+                <li><a href="#">学生成绩查看</a></li>
+                <li><a href="#">变更任课教师</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">个人中心 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid min-height">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 ">
+                <div class="login-form">
+                    <h5>· 你所在班级：<mark>高一</mark> <mark>6班</mark> <mark>英语老师</mark></h5>
+                    <div class="student-msg"><p>&nbsp;&nbsp;该班级现有学生共40名</p></div>
+                    <hr>
+                    <!--<div class="pull-right">-->
+                        <!--<button type="button" class="btn btn-info btn-xs">添加一名学生</button>-->
+                    <!--</div>-->
+                    <!--<button id="addNewStu" type="button" class="btn btn-info btn-xs">加一个</button>-->
+                    <form method="post" action="${base}/teacher/savestus.json">
+                       <div class="form-group"><label for="">设置一个学生查询成绩的初始密码：</label>
+                           <input type="text" >
+                           <label class="pwd-msg">初始密码设置后不可能更改</label>
+                       </div>
+                       <div class="form-group">
+                           <label for="">学生的入学年份：</label>
+                           <select name="period" id="period_id">
+
+                            </select>
+                       </div>
+                        <table id="footable-res2" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-2 col-md-2">序号</th>
+                                    <th class="col-xs-2 col-md-2">学号</th>
+                                    <th class="col-xs-4 col-md-4">名字</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ><figure><figcaption></figcaption></figure></td>
+                                    <td><input type="text" ></td>
+                                    <td><input type="text"></td>
+                                    <td><button  type="button" class="btn btn-success btn-xs" onclick="addNew(this);">加一个</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+<footer class="l-footer">
+    <p class="text-center sm-text">
+        <small>xm.mrh🍓提供技术支持</small>
+    </p>
+</footer>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/base.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="js/svgcheckbx.js"></script>
+<!--<script src="js/footable/js/footable.js?v=2-0-1"></script>-->
+<!--<script src="js/footable/js/footable.sort.js?v=2-0-1"></script>-->
+<script type="text/javascript">
+    $('.min-height').css('min-height', client().height - 102 + "px");
+    $(function () {
+        stuL = {
+            $period : $('#period_id'),
+            $table : $('#footable-res2'),
+            $tbody : $('#footable-res2 tbody'),
+            $btns : $('#footable-res2 tbody tr button[type=button]')
+        };
+
+        var tdL = $("#footable-res2").find('tbody tr:last td:last')[0];
+       // console.log(stuL.$btns);
+        var date = new Date();
+        var nowY = date.getFullYear();
+        for(var i = date.getFullYear()-7; i<=nowY; i++){
+            var $opt = $('<option value="'+i+'">'+i+'</option>');
+            stuL.$period.append($opt);
+        }
+
+    });
+    var addNew = function (obj,token) {
+        var $p = $(obj).parents("tr");
+        if($.trim($p.find('td:eq(2) input').val()) == ""){
+            console.log("s");
+        }else{
+            $p.find('td:not(:last-child)').addClass("disabled");
+            $p.find('td:eq(1) input').attr("readonly","readonly");
+            $p.find('td:eq(2) input').attr("readonly","readonly");
+            $(obj).text("编辑").attr("onclick","edit(this);").removeClass("btn-success").addClass("btn-info");
+            if(!token){
+                $p.find('td:last-child')
+                    .append($('<button  type="button" class="btn btn-danger btn-xs" onclick="deleteit(this);">删除</button>'));
+
+                var idx = parseInt($p.find('td:first-child').text());
+                if(!$p.next().length){
+                    var $td1 = $('<td><figure><figcaption></figcaption></figure></td>');
+                    var $td2 = $('<td><input type="text"></td>');
+                    var $td3 = $('<td><input type="text"></td>');
+                    var $td4 = $('<td><button  type="button" class="btn btn-success btn-xs" onclick="addNew(this);">加一个</button></td>')
+                    var $tr = $('<tr></tr>');
+                    $tr.append($td1).append($td2).append($td3).append($td4);
+                    stuL.$tbody.append($tr);
+                }
+            }else {
+                $(obj).next().removeClass("hidden");
+            }
+        }
+
+    };
+    var edit = function (obj) {
+        var $p = $(obj).parents("tr");
+        if($.trim($p.find('td:eq(2) input').val()) == ""){
+            console.log("s");
+        }else {
+            $p.find('td:not(:last-child)').removeClass("disabled");
+            $p.find('td:eq(1) input').removeAttr("readonly");
+            $p.find('td:eq(2) input').removeAttr("readonly");
+            $(obj).next().addClass('hidden');
+            $(obj).text("完成").attr("onclick", "addNew(this,'token');").removeClass("btn-success").addClass("btn-info");
+        }
+    };
+    
+    var deleteit = function (obj) {
+        //判断第一个td有没有data-id属性。有用ajax传输后台删除。没有就直接删除
+        var $p = $(obj).parents("tr");
+        if(!$p.find('td:first-child').data('id')){
+            $p.remove();
+        }else{
+            $.ajax({});
+        }
+    };
+
+
+</script>
+</body>
+</html>
