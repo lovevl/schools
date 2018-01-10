@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40aeffb3-7caf-43df-a967-ae9397b3d62a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scoreEnter.html" afterPath="$PROJECT_DIR$/scoreEnter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/studentList.html" afterPath="$PROJECT_DIR$/studentList.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scoreEnter.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scoreEnter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scoreEnter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="120" column="39" lean-forward="false" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="39" />
+            <state relative-caret-position="135">
+              <caret line="119" column="72" lean-forward="true" selection-start-line="119" selection-start-column="72" selection-end-line="119" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -86,14 +86,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studentList.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="studentList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/studentList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1260">
-              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="360">
+              <caret line="127" column="40" lean-forward="false" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
               <folding>
-                <element signature="e#4732#4738#0" expanded="true" />
-                <element signature="e#4738#4744#0" expanded="true" />
+                <element signature="e#4744#4750#0" expanded="true" />
+                <element signature="e#4750#4756#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/js/base.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/addTeacher.html" />
-        <option value="$PROJECT_DIR$/studentList.html" />
         <option value="$PROJECT_DIR$/scoreEnter.html" />
+        <option value="$PROJECT_DIR$/studentList.html" />
       </list>
     </option>
   </component>
@@ -314,12 +314,12 @@
       <workItem from="1515245074934" duration="9939000" />
       <workItem from="1515291573890" duration="9889000" />
       <workItem from="1515561263858" duration="794000" />
-      <workItem from="1515562512860" duration="630000" />
+      <workItem from="1515562512860" duration="664000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73404000" />
+    <option name="totallyTimeSpent" value="73438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
@@ -758,17 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studentList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1260">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="e#4732#4738#0" expanded="true" />
-            <element signature="e#4738#4744#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/changeT.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -798,9 +787,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scoreEnter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="120" column="39" lean-forward="false" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="39" />
+        <state relative-caret-position="135">
+          <caret line="119" column="72" lean-forward="true" selection-start-line="119" selection-start-column="72" selection-end-line="119" selection-end-column="72" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studentList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="127" column="40" lean-forward="false" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="40" />
+          <folding>
+            <element signature="e#4744#4750#0" expanded="true" />
+            <element signature="e#4750#4756#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
