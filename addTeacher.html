@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         body{
-            background: url("img/login_bg.jpg") 50% 0 no-repeat fixed;
+            background: url("img/login_bg.jpg") 50% -50px no-repeat fixed;
         }
         .navbar{
             border-radius: 0;
@@ -165,7 +165,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container-fluid ">
+<div class="container-fluid min-height">
     <div class="row ">
         <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 row-box">
             <div class="teacher-box">
@@ -262,7 +262,7 @@
                     </div>
                     <div class="form-group noteacher">
                         已被注册？
-                        <a href="${base}/teacher/changeT.jspx?id=">
+                        <a href="/changeT.html">
                             点这里变更
                         </a>
                     </div>
@@ -387,8 +387,7 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript">
-
-    $.trim()
+    $('.min-height').css('min-height',client().height-102 + "px");
 </script>
 </body>
 </html>
